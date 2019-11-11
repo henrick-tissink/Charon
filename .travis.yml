@@ -8,6 +8,8 @@ script:
     - dotnet build Charon.sln -c Release
     - mv ./Charon/bin/Release/netstandard2.0/Charon.dll ./
 deploy:
-    - skip_cleanup: true
-    - nuget pack Charon.nuspec
-    - nuget push Charon.*.nupkg -Verbosity detailed -ApiKey $ApiKey -Source $Source
+    skip_cleanup: true
+    provider: script
+    script:
+        - nuget pack Charon.nuspec
+        - nuget push Charon.*.nupkg -Verbosity detailed -ApiKey $ApiKey -Source $Source
