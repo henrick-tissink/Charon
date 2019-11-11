@@ -10,6 +10,6 @@ script:
 deploy:
     skip_cleanup: true
     provider: script
-    script: nuget push Charon/bin/Release/Charon.*.nupkg -Verbosity detailed -ApiKey $ApiKey -Source $Source
+    script: dotnet push Charon/bin/Release/Charon.*.nupkg -Verbosity detailed -ApiKey $ApiKey -Source $Source
     on:
         branch: master
