@@ -4,6 +4,10 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>8</LangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Henrick Tissink</Authors>
+    <PackageTags>sql database migration</PackageTags>
+    <Description>A simple database migration tool.</Description>
+    <PackageId>JC.Charon</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
