@@ -11,5 +11,5 @@ deploy:
     skip_cleanup: true
     provider: script
     script:
-        dotnet pack Charon.nuspec
-        dotnet push Charon.*.nupkg -Verbosity detailed -ApiKey $ApiKey -Source $Source
+        - dotnet pack Charon.nuspec
+        - dotnet push Charon.*.nupkg -Verbosity detailed -ApiKey $ApiKey -Source $Source
