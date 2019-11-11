@@ -1,15 +1,13 @@
 language: csharp
-mono: none
-dotnet: 3.0.1
 solution: Charon.sln
 install:
-    - dotnet restore Charon.sln
+    - nuget restore Charon.sln
 script:
-    - dotnet build Charon.sln -c Release
+    - xbuild Charon.sln -c Release
     - mv ./Charon/bin/Release/netstandard2.0/Charon.dll ./
 deploy:
     skip_cleanup: true
     provider: script
-    script: dotnet pack Charon.nuspec && dotnet push Charon.*.nupkg -Verbosity detailed -ApiKey $ApiKey -Source $Source
+    script: nuget pack Charon.nuspec && nuget push Charon.*.nupkg -Verbosity detailed -ApiKey $ApiKey -Source $Source
     on:
         branch: master
