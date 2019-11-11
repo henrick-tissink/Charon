@@ -3,7 +3,6 @@ mono: none
 dotnet: 3.0.1
 solution: Charon.sln
 install:
-    - nuget
     - dotnet restore Charon.sln
 script:
     - dotnet build Charon.sln -c Release
@@ -11,6 +10,6 @@ script:
 deploy:
     skip_cleanup: true
     provider: script
-    script: nuget pack Charon.nuspec && nuget push Charon.*.nupkg -Verbosity detailed -ApiKey $ApiKey -Source $Source
+    script: nuget push Charon/bin/Release/Charon.*.nupkg -Verbosity detailed -ApiKey $ApiKey -Source $Source
     on:
         branch: master
