@@ -1,9 +1,11 @@
 language: csharp
+mono: none
+dotnet: 3.0.1
 solution: Charon.sln
 install:
-    - nuget restore Charon.sln
+    - dotnet restore Charon.sln
 script:
-    - xbuild Charon.sln -c Release
+    - dotnet build Charon.sln -c Release
     - mv ./Charon/bin/Release/netstandard2.0/Charon.dll ./
 deploy:
     skip_cleanup: true
