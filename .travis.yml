@@ -1,2 +1,6 @@
 language: csharp
 solution: Charon.sln
+install:
+    - nuget restore Charon.sln
+script:
+    - dotnet build Charon.sln
