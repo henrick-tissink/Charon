@@ -6,9 +6,10 @@ install:
     - dotnet restore Charon.sln
 script:
     - dotnet build Charon.sln -c Release
+    - mv ./Charon/bin/Release/Charon.*.nupkg ./
 deploy:
     skip_cleanup: true
     provider: script
-    script: dotnet push Charon/bin/Release/Charon.*.nupkg -Verbosity detailed -ApiKey $ApiKey -Source $Source
+    script: dotnet push Charon.*.nupkg -Verbosity detailed -ApiKey $ApiKey -Source $Source
     on:
         branch: master
