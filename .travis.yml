@@ -3,6 +3,7 @@ mono: none
 dotnet: 3.0.1
 solution: Charon.sln
 install:
+    - nuget
     - dotnet restore Charon.sln
 script:
     - dotnet build Charon.sln -c Release
