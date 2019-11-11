@@ -6,7 +6,6 @@ install:
     - dotnet restore Charon.sln
 script:
     - dotnet build Charon.sln -c Release
-    - mv ./Charon/bin/Release/Charon.*.nupkg ./
 deploy:
     skip_cleanup: true
     provider: script
